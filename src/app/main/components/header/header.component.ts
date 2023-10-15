@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, ViewChild } from '@angular/core';
 import { TabWithIconT } from '@models/taiga.model';
 import { Router } from '@angular/router';
+import { TuiHostedDropdownComponent } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  public activeItemIndex = 0;
+  @ViewChild(TuiHostedDropdownComponent)
+  component?: TuiHostedDropdownComponent;
 
+  public activeItemIndex = 0;
   public tabs: TabWithIconT[] = [
     {
       id: 'sale',
@@ -34,9 +37,17 @@ export class HeaderComponent {
     }
   ];
 
+  public readonly options = ['Темный лес', 'Степь-да-поле', 'Ледяная долина', 'Тридевятое царство'];
+  public openDropDown = false;
+
   private readonly router = inject(Router);
 
   onClick(index: number): void {
     this.router.navigate(['/' + this.tabs[index].id]).then();
+  }
+
+  onSelectOption(): void {
+    this.openDropDown = false;
+    this.component?.nativeFocusableElement?.focus();
   }
 }

@@ -8,5 +8,23 @@
       </button>
     </tui-tabs>
   </div>
-  <div class="header-menu">user-menu</div>
+  <div class="header-menu">
+    <tui-hosted-dropdown tuiDropdownAlign="center" [content]="dropdown" [sided]="false" [(open)]="openDropDown">
+      <button
+        appearance="secondary"
+        class="tui-space-3 tui-space_right-3"
+        size="l"
+        tuiButton
+        type="button"
+        [pseudoActive]="openDropDown || null">
+        Выбор местоположения
+      </button>
+    </tui-hosted-dropdown>
+    <ng-template #dropdown let-close="close">
+      <tui-data-list>
+        <button *ngFor="let option of options" tuiOption (click)="onSelectOption()">{{ option }}</button>
+      </tui-data-list>
+    </ng-template>
+    <button [icon]="'tuiIconHeartLarge'" appearance="whiteblock-active" class="tui-space-3" tuiIconButton></button>
+  </div>
 </header>
