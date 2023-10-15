@@ -23,7 +23,7 @@ module.exports = {
       }
     },
     {
-      files: ['*.component.ts', '*.module.ts'],
+      files: ['*.component.ts', '*.module.ts', "*.model.ts"],
       extends: ['plugin:@angular-eslint/template/process-inline-templates', 'plugin:prettier/recommended']
     }
   ]

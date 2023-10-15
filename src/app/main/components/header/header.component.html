@@ -1,1 +1,12 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header-logo">ЛихоЛесье</div>
+  <div class="header-tabs">
+    <tui-tabs [(activeItemIndex)]="activeItemIndex">
+      <button *ngFor="let tab of tabs;index as i;" tuiTab (click)="onClick(i)">
+        <tui-svg [src]="tab.icon" class="tui-space_right-2"></tui-svg>
+        {{ tab.title }}
+      </button>
+    </tui-tabs>
+  </div>
+  <div class="header-menu">user-menu</div>
+</header>

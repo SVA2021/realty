@@ -7,10 +7,11 @@ import { ALL_TAIGA_UI_MODULES } from './helpers/taiga/all-taiga-modules';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainModule } from './main/main.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ALL_TAIGA_UI_MODULES],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ALL_TAIGA_UI_MODULES, MainModule],
   providers: [
     tuiSvgOptionsProvider({
       path: 'https://taiga-ui.dev/assets/taiga-ui/icons'
