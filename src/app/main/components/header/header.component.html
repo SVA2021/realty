@@ -1,9 +1,20 @@
 <header class="header">
-  <div class="header-logo">ЛихоЛесье</div>
+  <div
+    class="header-logo"
+    (click)="goHome()"
+  >
+    ЛихоЛесье
+  </div>
   <div class="header-tabs">
-    <tui-tabs [(activeItemIndex)]="activeItemIndex">
-      <button *ngFor="let tab of tabs;index as i;"
-              tuiTab (click)="onClick(i)">
+    <tui-tabs
+      [underline]="false"
+    >
+      <button
+        *ngFor="let tab of tabs;index as i;"
+        tuiTab
+        [routerLink]="tab.id"
+        routerLinkActive
+      >
         <tui-svg
           [src]="tab.icon"
           class="tui-space_right-2"

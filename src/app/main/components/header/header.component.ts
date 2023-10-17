@@ -13,7 +13,6 @@ export class HeaderComponent {
   @ViewChild(TuiHostedDropdownComponent)
   component?: TuiHostedDropdownComponent;
 
-  public activeItemIndex = 0;
   public tabs: TabWithIconT[] = [
     {
       id: 'sale',
@@ -42,8 +41,8 @@ export class HeaderComponent {
 
   private readonly router = inject(Router);
 
-  onClick(index: number): void {
-    this.router.navigate(['/' + this.tabs[index].id]).then();
+  goHome(): void {
+    this.router.navigate(['/']).then();
   }
 
   onSelectOption(): void {
