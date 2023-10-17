@@ -9,8 +9,9 @@ import { RentComponent } from './pages/rent/rent.component';
 import { SaleComponent } from './pages/sale/sale.component';
 import { MainComponent } from './main.component';
 import { ALL_TAIGA_UI_MODULES } from '../helpers/taiga/all-taiga-modules';
+import { HomeComponent } from './pages/home/home.component';
 @NgModule({
-  declarations: [HeaderComponent, CommercialComponent, MortgageComponent, RentComponent, SaleComponent, MainComponent],
+  declarations: [HeaderComponent, CommercialComponent, MortgageComponent, RentComponent, SaleComponent, MainComponent, HomeComponent],
   imports: [CommonModule, MainRoutingModule, ALL_TAIGA_UI_MODULES]
 })
 export class MainModule {}

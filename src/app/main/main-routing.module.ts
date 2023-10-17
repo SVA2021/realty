@@ -5,6 +5,7 @@ import { SaleComponent } from './pages/sale/sale.component';
 import { RentComponent } from './pages/rent/rent.component';
 import { CommercialComponent } from './pages/commercial/commercial.component';
 import { MortgageComponent } from './pages/mortgage/mortgage.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -29,8 +30,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'sale',
-        pathMatch: 'full'
+        component: HomeComponent
       }
     ]
   }
