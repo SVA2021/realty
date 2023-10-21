@@ -1,1 +1,29 @@
-<p>home works!</p>
+<section class="home">
+  <div class="home-banner">
+    <img
+      [src]="bannerSrc"
+      alt="here will be a banner"
+      class="home-img">
+  </div>
+  <div class="home-cards-wrapper">
+    <button
+      *ngFor="let card of cards;"
+      tuiAction
+      type="button"
+      class="home-card"
+      (click)="onClick(card.id)"
+    >
+      <div class="home-card-content">
+        <h3 class="home-card-title tui-text_h3">{{card.title}}</h3>
+        <p class="home-card-description tui-text_body-m-2">
+          {{card.description}}
+        </p>
+      </div>
+      <tui-marker-icon
+        size="l"
+        class="tui-island__marker home-card-icon"
+        [src]="card.icon"
+      ></tui-marker-icon>
+    </button>
+  </div>
+</section>
